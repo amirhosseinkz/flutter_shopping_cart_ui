@@ -25,26 +25,28 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: backGroundColor,
         bottomNavigationBar: bottomNavigation(),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
-          child: Column(
-           children: [
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
+            child: Column(
+             children: [
 
-             header(size),
+               header(size),
 
-              for (int i = 0; i < product.length; i++)
-                listTileWidget
-                  (
-                    product[i].price,
-                    product[i].title,
-                    product[i].count,
-                    product[i].image,
-                    size)
-             ,
+                for (int i = 0; i < product.length; i++)
+                  listTileWidget
+                    (
+                      product[i].price,
+                      product[i].title,
+                      product[i].count,
+                      product[i].image,
+                      size)
+               ,
 
-             bottomSection(size),
+               bottomSection(size),
 
-            ],
+              ],
+            ),
           ),
         ),
       ),
